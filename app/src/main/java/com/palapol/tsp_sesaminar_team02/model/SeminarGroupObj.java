@@ -31,6 +31,14 @@ public class SeminarGroupObj {
         }
         return StudentCodeAndName;
     }
+
+    public String GetTeacherName(){
+        String TeacherName = new String();
+        for(RSMaster obj: rs_master){
+            TeacherName = "อาจารย์ที่ปรึกษา : "+obj.getGp_master_name();
+        }
+        return TeacherName;
+    }
 }
 
 class RSStudent {

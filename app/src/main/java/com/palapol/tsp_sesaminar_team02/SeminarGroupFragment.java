@@ -1,7 +1,7 @@
 package com.palapol.tsp_sesaminar_team02;
 
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -26,23 +26,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * A SeminarGroup {@link Fragment} subclass.
  */
-//@SuppressLint("ValidFragment")
 public class SeminarGroupFragment extends Fragment {
 
     private ArrayList<String> seminar_group_data = new ArrayList<>();
-
-//    @SuppressLint("ValidFragment")
-//    public SeminarGroupFragment(String gp_master_con) {
-//        gp_master = gp_master_con;
-//    }
 
     public SeminarGroupFragment (){}
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        String gp_master = this.getArguments().getString("gp_master");
         View v = inflater.inflate(R.layout.fragment_seminar_group, container, false);
-        String gp_master = "305";
         GetSeminarGroupData(gp_master, v);
         return v;
     }
@@ -105,6 +99,8 @@ public class SeminarGroupFragment extends Fragment {
                     System.out.println("Response = "+ response);
                     System.out.println("Response = "+ response.body());
                     System.out.println("Response = "+ seminar_group_data);
+                    TextView teacherName = v.findViewById(R.id.seminar_group_teacher_name);
+                    teacherName.setText(resObj.GetTeacherName());
                     RecyclerView mRecyclerView = v.findViewById(R.id.seminar_group_recycler_view);
                     mRecyclerView.setHasFixedSize(true);
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());

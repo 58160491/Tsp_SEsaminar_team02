@@ -34,10 +34,10 @@
                     android:textColor="#FFFFFF"
                     android:text="ข้อมูลนิสิต"/>
                 <TextView
-                    android:id="@+id/seminar_group_teacher_id"
+                    android:id="@+id/seminar_group_teacher_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="อาจารย์ทีปรึกษา : ผศนวลศรี เด่นวัฒนา [test layout]"/>
+                    android:text=""/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
