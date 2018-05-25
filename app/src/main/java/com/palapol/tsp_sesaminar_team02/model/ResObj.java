@@ -1,10 +1,56 @@
 package com.palapol.tsp_sesaminar_team02.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class ResObj {
     private String message;
     private String IdUser;
     private String UsName;
     private String WgNameT;
+    @SerializedName("pro_index")
+    private String proIndex;
+
+    @SerializedName("pro_title")
+    private String proTitle;
+
+    @SerializedName("jou_index")
+    private String jouIndex;
+
+    @SerializedName("jou_title")
+    private String jouTitle;
+
+    public String getProIndex() {
+        return proIndex;
+    }
+
+    public void setProIndex(String proIndex) {
+        this.proIndex = proIndex;
+    }
+
+    public String getProTitle() {
+        return proTitle;
+    }
+
+    public void setProTitle(String proTitle) {
+        this.proTitle = proTitle;
+    }
+
+
+    public String getJouIndex() {
+        return jouIndex;
+    }
+
+    public void setJouIndex(String jouIndex) {
+        this.jouIndex = jouIndex;
+    }
+
+    public String getJouTitle() {
+        return jouTitle;
+    }
+
+    public void setJouTitle(String jouTitle) {
+        this.jouTitle = jouTitle;
+    }
 
     public String getWgID() {
         return WgID;

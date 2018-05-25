@@ -1,8 +1,9 @@
 package com.palapol.tsp_sesaminar_team02;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity
         WgId = extras.getString("WgID");
         if (WgId.equals("16")){
             student.setVisibility(View.GONE);
+
         }else if(WgId.equals("15")){
             teacher.setVisibility(View.GONE);
         }
@@ -93,7 +95,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
         int id = item.getItemId();
+        Fragment serchCatecgoryFragment;
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
@@ -104,7 +108,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
-
+            serchCatecgoryFragment = new SerchCatecgoryFragment();
+            FragmentManager fm = getFragmentManager();// อันนี้
+            FragmentTransaction ft = fm.beginTransaction(); //อันนี้เป็นคำสั่งเดิมของ Fragment
+            ft.replace(R.id.layout_for_Fragment, serchCatecgoryFragment);//เปลี่ยนจากหน้าไหนไปหน้าไหน ไอดีหน้า ที่ต้องการให้เปลี่ยน layout_for_fragment แล้วเลือกหน้าที่เราจะเอามาแทนคือbookStorefragment
+            ft.commit();
         } else if (id == R.id.nav_send) {
 
         }
@@ -119,9 +127,11 @@ public class MainActivity extends AppCompatActivity
         switch (v.getId()){
             case R.id.student : {
                 Toast.makeText(this,"Student",Toast.LENGTH_SHORT).show();
+                break;
             }
             case R.id.theacher : {
                 Toast.makeText(this,"Teacher",Toast.LENGTH_SHORT).show();
+                break;
             }
         }
     }

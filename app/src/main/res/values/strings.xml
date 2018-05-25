@@ -6,4 +6,16 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="year">
+        <item>2560</item>
+        <item>2559</item>
+    </string-array>
+    <string-array name="catecgory">
+        <item>Journal</item>
+        <item>Proceedings</item>
+    </string-array>
 </resources>
